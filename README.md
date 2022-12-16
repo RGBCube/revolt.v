@@ -2,7 +2,7 @@
 
 <h1>revolt.v</h1>
 
-[Docs](https://rgbcube.github.io/docs/revolt) | [Examples](https://github.com/RGBCube/bonfire.v/tree/master/examples)
+[Docs](https://rgbcube.github.io/docs/revolt) | [Examples](https://github.com/RGBCube/revolt.v/tree/master/examples)
 
 A Revolt.chat API wrapper for the V programming language.
 
