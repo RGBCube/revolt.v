@@ -15,11 +15,11 @@ pub struct IdHolder {
 // FIXME: This is broken.
 
 // created_at returns the creation time of the IdHolder.
-pub fn (idh IdHolder) created_at() !Time {
+pub fn (idh IdHolder) created_at() Time {
 	encoder := base32.new_encoding_with_padding(revolt.ulid_base32_alphabet, base32.no_padding)
 
 	str_10_bytes := idh.id[..10].bytes()
-	u64_bytes := encoder.decode(str_10_bytes) or { return error('invalid ULID') }
+	u64_bytes := encoder.decode(str_10_bytes) or { return panic('invalid ULID: ${idh.id}') }
 
 	milliseconds_total := dump(binary.big_endian_u64_end(u64_bytes))
 	seconds := i64(milliseconds_total / 1000)
